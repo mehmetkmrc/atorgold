@@ -1,0 +1,36 @@
+/* Varsayılan renkler */
+.primary-menu {
+    color: var(--primary-color);
+  }
+  
+  /* Beyaz arka plan için siyah renk */
+  [data-bs-theme="light"] .primary-menu,
+  [data-bs-theme="light"] .primary-menu a {
+    color: black;
+  }
+  
+  [data-bs-theme="light"] .primary-menu i {
+    color: rgb(196, 176, 176);
+  }
+  
+  /* Siyah arka plan için beyaz renk */
+  [data-bs-theme="dark"] .primary-menu,
+  [data-bs-theme="dark"] .primary-menu a {
+    color: white;
+  }
+  
+  [data-bs-theme="dark"] .primary-menu i {
+    color: white;
+  }
+  
+  /* İkonların renk karışımı */
+  .primary-menu i {
+    mix-blend-mode: difference;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Hover için geçiş efekti */
+  .primary-menu a:hover,
+  .primary-menu a:hover i {
+    opacity: 0.8;
+  }

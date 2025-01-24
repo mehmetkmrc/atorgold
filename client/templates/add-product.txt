@@ -1,0 +1,102 @@
+<form id="documentLoader" enctype="multipart/form-data">
+    <center>
+        <h1>Ürün Ekle</h1>
+    </center>
+    <div class="container py-5">
+
+        <div class="row">
+            <div class="col-6 form-group">
+                <label for="template-contactform-name">Ürün Adı <small>*</small></label>
+                <input type="text" id="template-contactform-name" name="main_title" class="form-control required" />
+            </div>
+            <div class="col-6 form-group">
+                <label for="template-contactform-name">Alt Başlık<small>*</small></label>
+                <input type="text" id="template-contactform-name" name="sub_title" class="form-control required" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 form-group">
+                <label for="template-contactform-name">Ürün Kodu <small>*</small></label>
+                <input type="text" id="template-contactform-name" name="product_code" class="form-control required" />
+            </div>
+            <div class="col-6 form-group">
+                <label for="exampleFormControlTextarea1">Ürün Özellikleri</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="sub_message" rows="3"></textarea>
+            </div>
+        </div>
+        <br>
+        <div class="row center">...Buraya Tablo Doldurulan Kısım...</div>
+        <br>
+        <div class="row">
+            <div class="col-6 form-group">
+                <label for="exampleFormControlTextarea1">Koleksiyon Hakkında</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="about_collection"
+                    rows="3"></textarea>
+            </div>
+            <div class="col-6 form-group">
+                <label for="exampleFormControlTextarea1">Mücevher Bakımı</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="jewellery_care"
+                    rows="3"></textarea>
+            </div>
+        </div>
+
+        <div class="row py-4">
+            <div class="col-lg-6 mx-auto">
+
+                <!-- Upload image input-->
+                <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                    <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0" multiple>
+                    <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                    <div class="input-group-append">
+                        <label for="upload" class="btn btn-light m-0 rounded-pill px-4">
+                            <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+                            <small class="text-uppercase font-weight-bold text-muted">Choose file</small>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Uploaded image area-->
+                <p class="font-italic text-white text-center">The images uploaded will be rendered inside the box below.
+                </p>
+                <div id="imageArea" class="image-area mt-4 d-flex flex-wrap justify-content-center"></div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <center>
+        <button class="button button-circle button-large ms-0 px-5 mt-4 mb-2 d-block" type="submit"
+            data-bs-target="#kt_modal_1">Yükle</button>
+    </center>
+</form>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" id="kt_modal_1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title"></h3>
+
+                <!--begin::Close-->
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
+                    aria-label="Close">
+                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
+                </div>
+                <!--end::Close-->
+            </div>
+
+            <div class="modal-body">
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal"></button>
+            </div>
+        </div>
+    </div>
+</div>

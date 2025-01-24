@@ -1,0 +1,182 @@
+<header id="header" class="header-size-md transparent-header semi-transparent sticky-on-scrollup header-default primary-menu me-lg-auto not-dark primary-menu-init" data-sticky-class="not-dark">
+	<div id="header-wrap" class="" data-bs-theme="light">
+		<div class="container">
+			<div class="header-row top-search-parent">
+
+				<!-- Logo
+				============================================= -->
+				<div id="logo">
+					<a href="/">
+						<img class="logo-default" srcset="/demos/jewellery-boutique/images/ator_18_md.png, /demos/jewellery-boutique/images/ator_17@2x.png 2x" src="demos/jewellery-boutique/images/ator_17@2x.png" alt="Canvas Logo" style="width: 40%; height: 40%;">
+					</a>
+				</div><!-- #logo end -->
+
+				<div class="header-misc">
+
+					<!-- Top Search
+					============================================= -->
+					<div id="top-search" class="header-misc-icon">
+						<a href="#" id="top-search-trigger"><i class="bi-search"></i><i class="bi-x-lg"></i></a>
+					</div><!-- #top-search end -->
+
+					{{ if .IsAuthenticated }}
+					<div class="dropdown mx-3 me-lg-0">
+						<a href="#" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"><i class="uil uil-user"></i></a>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu1" style="">
+							<a class="dropdown-item text-start" href="#">Profile</a>
+							<a class="dropdown-item text-start" href="#">Messages <span
+									class="badge rounded-pill bg-secondary float-end"
+									style="margin-top: 3px;">5</span></a>
+							<a class="dropdown-item text-start" href="#">Settings</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item text-start" href="#">Logout <i class="bi-box-arrow-left"></i></a>
+						</ul>
+					</div>
+					{{ else }}
+					<div id="top-uil-user" class="header-misc-icon ms-3 ms-lg-4">
+						<div>
+							<a href="/login"><i class="uil uil-user"></i></a>
+
+						</div>
+					</div>
+					{{ end }}
+
+				</div>
+
+				<div class="primary-menu-trigger ms-1">
+					<button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+						<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+					</button>
+				</div>
+
+				<!-- Primary Navigation
+				============================================= -->
+				<nav class="primary-menu me-lg-auto not-dark primary-menu-init" data-bs-theme="light">
+					<ul class="menu-container">
+						<li class="menu-item mega-menu mega-menu-full sub-menu">
+							<a class="menu-link" href="#"><div>Koleksiyonlar <i class="bi- uil uil-plus"></i><i class="sub-menu-indicator fa-solid fa-caret-down"></i></div></a>
+							<div class="mega-menu-content mega-menu-style-2 d-none" style="">
+								<div class="container" style="">
+									<div class="row">
+										<div class="sub-menu-container mega-menu-column col-12 d-none" style="">
+
+											<div class="d-flex justify-content-center align-items-md-center py-4 py-md-3" style="">
+												<div class="col-lg-6">
+													<ul class="mega-menu-links">
+														<li class="target-link-active" data-target="#target-all">
+															<a href="/products">Tüm Koleksiyonlar</a>
+														</li>
+														<li data-target="#target-necklace">
+															<a href="/products?category=Kolye">Kolye</a>
+														</li>
+														<li data-target="#target-bracelets">
+															<a href="/products?category=Bilezik">Bilezik</a>
+														</li>
+														<li data-target="#target-rings">
+															<a href="/products?category=Yüzük">Yüzük</a>
+														</li>
+														<li data-target="#target-earrings">
+															<a href="/products?category=Küpe">Küpe</a>
+														</li>
+													</ul>
+												</div>
+												<div class="d-none d-lg-flex col-lg-5 col-xl-4 target-content">
+													<div class="target-active" id="target-all">
+														<img src="/demos/jewellery-boutique/images/menu/1.jpg" alt="">
+													</div>
+													<div class="" id="target-necklace">
+														<img src="/demos/jewellery-boutique/images/menu/2.jpg" alt="">
+													</div>
+													<div class="" id="target-bracelets">
+														<img src="/demos/jewellery-boutique/images/menu/3.jpg" alt="">
+													</div>
+													<div class="" id="target-rings">
+														<img src="/demos/jewellery-boutique/images/menu/4.jpg" alt="">
+													</div>
+													<div class="" id="target-earrings">
+														<img src="/demos/jewellery-boutique/images/menu/5.jpg" alt="">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						<button class="sub-menu-trigger fa-solid fa-chevron-right"><span class="visually-hidden">Alt-Menü</span></button></li>
+						<li class="menu-item mega-menu mega-menu-full sub-menu">
+							<a class="menu-link" href="#"><div>Hakkımızda <i class="bi- uil uil-plus"></i><i class="sub-menu-indicator fa-solid fa-caret-down"></i></div></a>
+							<div class="mega-menu-content mega-menu-style-2 d-none" style="">
+								<div class="container" style="">
+									<div class="row">
+										<div class="sub-menu-container mega-menu-column col-12 d-none" style="">
+											<div class="d-flex justify-content-center align-items-md-center py-4" style="">
+												<ul class="mega-menu-links">
+													<li>
+														<a href="/about-us">Hikayemiz</a>
+													</li>
+													<li>
+														<a href="#">Sık SOrulan Sorular</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						<button class="sub-menu-trigger fa-solid fa-chevron-right"><span class="visually-hidden">Alt-Menü</span></button></li>
+						<li class="menu-item">
+							<a class="menu-link side-panel-trigger" href="" id="enable-js-access"><div>Contact</div></a>
+							{{template "partials/left-sidepanel" .}}
+						</li>
+					</ul>
+					<!-- Alternate Mobile Menu -->
+					<ul class="menu-container mobile-primary-menu">
+						<li class="menu-item sub-menu">
+							<a class="menu-link" href="#"><div>Ürünler <i class="bi- uil uil-plus"></i><i class="sub-menu-indicator fa-solid fa-caret-down"></i></div></a>
+							<ul class="sub-menu-container d-none" style="">
+								<li class="menu-item" style="">
+									<a href="/products" class="menu-link">Tüm Koleksiyonlar</a>
+								</li>
+								<li class="menu-item" style="">
+									<a href="/products?category=Kolye" class="menu-link">Kolye</a>
+								</li>
+								<li class="menu-item" style="">
+									<a href="/products?category=Bilezik" class="menu-link">Bilezik</a>
+								</li>
+								<li class="menu-item" style="">
+									<a href="/products?category=Yüzük" class="menu-link">Rings</a>
+								</li>
+								<li class="menu-item" style="">
+									<a href="/products?category=Küpe" class="menu-link">Küpeler</a>
+								</li>
+							</ul>
+						
+						<li class="menu-item sub-menu">
+							<a class="menu-link" href=""><div>Hakkımızda <i class="bi- uil uil-plus"></i><i class="sub-menu-indicator fa-solid fa-caret-down"></i></div></a>
+							<ul class="sub-menu-container d-none" style="">
+								<li class="menu-item" style="">
+									<a href="/about-us" class="menu-link">Hikayemiz</a>
+								</li>
+								<li class="menu-item" style="">
+									<a href="#" class="menu-link">Sık Sorulan Sorular</a>
+								</li>
+							</ul>
+						
+						<li class="menu-item">
+							<a class="menu-link" href=""><div>Contact</div></a>
+						</li>
+					</ul>
+
+				</nav>
+				<!-- #primary-menu end -->
+
+				<form class="top-search-form" action="search.html" method="get">
+					<input type="text" name="q" class="form-control border-0" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
+				</form>
+
+			</div>
+		</div>
+	</div>
+	<div class="header-wrap-clone"></div>
+</header>

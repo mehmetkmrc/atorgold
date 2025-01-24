@@ -1,0 +1,26 @@
+/* Başlangıç durumu: Şeffaf ve beyaz yazılar */
+#header {
+    color: white;
+    transition: color 0.3s, background-color 0.3s;
+}
+#header.sticky {
+    background-color: #fff; /* Kaydırınca arkaplan */
+    color: black; /* Yazı ve ikonlar siyah */
+}
+
+/* İkonlar ve menü renkleri */
+.header-misc-icon a,
+.primary-menu-trigger button,
+.primary-menu .menu-link {
+    color: inherit;
+    transition: color 0.3s;
+}
+
+#header.sticky .header-misc-icon a,
+#header.sticky .primary-menu-trigger button,
+#header.sticky .primary-menu .menu-link {
+    color: black;
+}
+
+
+

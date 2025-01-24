@@ -1,0 +1,304 @@
+{{ range .FilteredDocuments }}
+<section class="page-title bg-transparent">
+    <div class="container">
+        <div class="page-title-row">
+
+            <div class="page-title-content">
+                <h1>{{ .title }}</h1>
+            </div>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+                    <li class="breadcrumb-item"><a href="/products">Koleksiyonlar</a></li>
+                    {{ range .SubDocuments }}
+                    <li class="breadcrumb-item active" aria-current="page">{{ .sub_title }}</li>
+                    {{ end }}
+                </ol>
+            </nav>
+
+        </div>
+    </div>
+</section>
+{{ end }}
+<section id="content">
+    <div class="content-wrap">
+        <div class="container">
+            {{ range .FilteredDocuments }}
+            <div class="single-product">
+                <div class="product">
+                    <div class="row gutter-40">
+
+                        <div class="col-md-5">
+
+                            <!-- Product Single - Gallery
+                            ============================================= -->
+                            <div class="product-image">
+                                <div class="fslider" data-pagi="false" data-arrows="false" data-thumbs="true">
+                                    <div class="flexslider">
+                                        
+                                            <div class="slider-wrap" data-lightbox="gallery" style="width: 1000%; transition-duration: 0s; transform: translate3d(-1324px, 0px, 0px);">
+                                                <!-- Dinamik assetler buradan başlıyor -->
+                                                {{ range .SubDocuments }}
+                                                {{ range .asset }}
+                                                <div class="slide" data-thumb="{{ . }}" style="width: 266.656px; margin-right: 0px; float: left; display: block;">
+                                                    <a href="{{ . }}"  data-lightbox="gallery-item">
+                                                        <img src="{{ . }}" alt="Product Image" draggable="true">
+                                                    </a>
+                                                </div>
+                                                {{ end }}                                              
+                                                {{ end }}
+                                                <!-- Dinamik assetler burada bitiyor -->
+                                            </div>
+                                        
+                                        <ol class="flex-control-nav flex-control-thumbs">
+                                            
+                                        </ol>
+                                    </div>
+                                </div>
+                                <!-- <div class="sale-flash badge bg-danger p-2">Sale!</div> -->
+                            </div>
+                            <!-- Product Single - Gallery End -->
+                            
+                            <!-- Product Single - Gallery End -->
+
+                        </div>
+
+                        <div class="col-md-6 product-desc">
+
+                            <i class="me-1 bi-telephone"></i><span class="d-none d-md-inline-block">
+                                    <a class="menu-link side-panel-trigger" href="" id="enable-js-access">
+                                        İletişim
+                                    </a></span>
+                                    {{template "partials/left-sidepanel" .}}
+                                
+                            
+
+                            <!-- Product Single - Quantity & Cart Button
+                            ============================================= -->
+                            
+                            
+                            <!-- Product Single - Quantity & Cart Button End -->
+
+                            <div class="line"></div>
+
+                            <!-- Product Single - Short Description
+                            ============================================= -->
+                            
+                            
+                            
+                            <ul class="iconlist">
+                                {{ range .SubDocuments}}
+                                <li><i class="fa-solid fa-caret-right"></i> {{ .sub_message }}</li>
+                                {{ end }}
+                                
+                            </ul><!-- Product Single - Short Description End -->
+
+                            <!-- Product Single - Meta
+                            ============================================= -->
+                            <div class="card product-meta">
+                                <div class="card-body">
+                                    
+                                    <span itemprop="productID" class="sku_wrapper"><span
+                                            class="sku">
+                                            {{ range .SubDocuments}}
+                                            {{ .product_code }}
+                                            {{ end }}
+                                        </span>
+                                    </span>
+                                    <span> -    ÜRÜN BİLGİLERİ: <a href="#" rel="tag"></a></span>
+                                    
+                                </div>
+                            </div><!-- Product Single - Meta End -->
+
+                            <!-- Product Single - Share
+                            ============================================= -->
+                            <div class="card mt-6 pt-4 border-0 border-top rounded-0 border-default">
+                                <div class="card-body p-0">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h6 class="fs-6 fw-semibold mb-0">Paylaş:</h6>
+                                        <div class="d-flex">
+                                            <a href="#"
+                                                class="social-icon si-small text-white border-transparent rounded-circle bg-instagram"
+                                                title="Instagram">
+                                                <i class="fa-brands fa-instagram"></i>
+                                                <i class="fa-brands fa-instagram"></i>
+                                            </a>
+
+                                            <a href="#"
+                                                class="social-icon si-small text-white border-transparent rounded-circle bg-x-twitter"
+                                                title="Twitter">
+                                                <i class="fa-brands fa-x-twitter"></i>
+                                                <i class="fa-brands fa-x-twitter"></i>
+                                            </a>
+
+                                            <a href="#"
+                                                class="social-icon si-small text-white border-transparent rounded-circle bg-whatsapp"
+                                                title="Whatsapp">
+                                                <i class="fa-brands fa-whatsapp"></i>
+                                                <i class="fa-brands fa-whatsapp"></i>
+                                            </a>
+
+                                            <a href="#"
+                                                class="social-icon si-small text-white border-transparent rounded-circle bg-facebook"
+                                                title="Facebook">
+                                                <i class="fa-brands fa-facebook-f"></i>
+                                                <i class="fa-brands fa-facebook-f"></i>
+                                            </a>
+
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- Product Single - Share End -->
+
+                        </div>
+
+                        
+
+                        <div class="w-100"></div>
+
+                        <div class="col-12 mt-5">
+
+                            <div class="mb-0">
+                                {{ range .SubDocuments}}
+                                {{ range .ContentDocuments }}
+                                <ul class="nav nav-pills nav-fill" id="tab-1" role="tablist"
+                                    style="--bs-nav-link-font-weight: 500; --bs-nav-pills-link-active-bg: black">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="canvas-tabs-1-tab" data-bs-toggle="pill"
+                                            data-bs-target="#tabs-1" type="button" role="tab"
+                                            aria-controls="canvas-tabs-1" aria-selected="true"><i
+                                                class="me-1 bi-justify"></i><span class="d-none d-md-inline-block">
+                                                Koleksiyon Hakkında</span></button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="canvas-tabs-2-tab" data-bs-toggle="pill"
+                                            data-bs-target="#tabs-2" type="button" role="tab"
+                                            aria-controls="canvas-tabs-2" aria-selected="false" tabindex="-1"><i
+                                                class="me-1 bi-info-circle-fill"></i><span
+                                                class="d-none d-md-inline-block"> Ürün Bilgileri</span></button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="canvas-tabs-3-tab" data-bs-toggle="pill"
+                                            data-bs-target="#tabs-3" type="button" role="tab"
+                                            aria-controls="canvas-tabs-3" aria-selected="false" tabindex="-1"><i
+                                                class="me-1 bi-star-fill"></i><span class="d-none d-md-inline-block">
+                                                Mücevher Bakımı</span></button>
+                                    </li>
+                                </ul>
+
+                                <br>
+                                <div id="canvas-tab-alt-content" class="tab-content">
+                                    <div class="tab-pane fade show active" id="tabs-1" role="tabpanel"
+                                        aria-labelledby="canvas-tabs-1-tab" tabindex="0">
+                                        <p>{{ .about_collection }}</p>
+                            
+                                    </div>
+                                    <div class="tab-pane fade" id="tabs-2" role="tabpanel"
+                                        aria-labelledby="canvas-tabs-2-tab" tabindex="0">
+
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Size</td>
+                                                    <td>Small, Medium &amp; Large</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Color</td>
+                                                    <td>Pink &amp; White</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Waist</td>
+                                                    <td>26 cm</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Length</td>
+                                                    <td>40 cm</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Chest</td>
+                                                    <td>33 inches</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Fabric</td>
+                                                    <td>Cotton, Silk &amp; Synthetic</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Warranty</td>
+                                                    <td>3 Months</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="tabs-3" role="tabpanel"
+                                        aria-labelledby="canvas-tabs-3-tab" tabindex="0">
+
+                                        <p>{{ .jewellery_care }}</p>
+
+                                    </div>
+
+                                </div>
+                                {{ end }}
+                                {{ end }}
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if .RelatedSubDocuments }}
+            <div class="line"></div>
+
+            <div class="w-100">
+                <h4>Size İlham Verebilecek Diğer Seçenekler</h4>
+                <div class="owl-carousel product-carousel carousel-widget owl-loaded owl-drag" data-margin="30"
+                    data-pagi="false" data-autoplay="5000" data-items-xs="1" data-items-md="2" data-items-lg="3"
+                    data-items-xl="4">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage"
+                            style="transform: translate3d(-1089px, 0px, 0px); transition: 0.25s; width: 1815px;">
+                            {{ range $doc := .RelatedSubDocuments }}
+                                <div class="owl-item" style="width: 333px; margin-right: 30px;">
+                                    <div class="oc-item">
+                                        <div class="product">
+                                            <div class="product-image">
+                                                <a href="/product-single/{{.main_id}}"><img src="{{ index $doc.asset 0 }}" alt="{{ $doc.sub_title }}"></a>
+                                                <!-- Eğer birden fazla resim varsa aşağıdaki gibi görüntüleyebilirsiniz-->
+                                                {{/* range $index, $asset := $doc.asset }}
+                                                   {{if ne $index 0 }}
+                                                    <a href="/"><img src="{{$asset}}"
+                                                                    alt="{{$doc.sub_title}}"></a>
+                                                   {{end}}
+                                                {{end*/}}
+                                               
+                                                
+                                            </div>
+                                            <div class="product-desc text-center">
+                                                <div class="product-title">
+                                                    <h3><a href="/product-single/{{.main_id}}">{{ $doc.title }}</a></h3>
+                                                </div>
+                                                <div class="product-price"> <ins>{{$doc.product_code}}</ins></div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                    <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i
+                                class="uil uil-angle-left-b"></i></button><button type="button" role="presentation"
+                            class="owl-next disabled"><i class="uil uil-angle-right-b"></i></button></div>
+                    <div class="owl-dots disabled"></div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        
+    </div>
+</section>
